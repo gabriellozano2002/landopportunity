@@ -200,16 +200,16 @@
           <div>
             <div class="ind-ord" style="color:var(--sector-residencial)">03 / 04</div>
             <div class="ind-icon" style="border-color:rgba(139,38,53,.3);background:rgba(139,38,53,.06)"><svg viewBox="0 0 24 24" fill="none" stroke="#8B2635" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:22px;height:22px"><path d="M3 12L12 4l9 8"/><rect x="5" y="12" width="14" height="10" rx="1"/><rect x="9" y="16" width="6" height="6" rx=".5"/></svg></div>
-            <h3 class="ind-title">Fraccionamientos Residenciales</h3>
+            <h3 class="ind-title">Fraccionamientos Residencial Campestre</h3>
             <div class="ind-sub" style="color:var(--sector-residencial)">Vivienda Premium · Amenidades · Comunidad</div>
-            <p class="ind-desc">Fraccionamientos residenciales de alto nivel con amenidades exclusivas, seguridad perimetral y diseño que eleva la calidad de vida.</p>
+            <p class="ind-desc">Fraccionamientos Residencial Campestre de alto nivel con amenidades exclusivas, seguridad perimetral y diseño que eleva la calidad de vida.</p>
           </div>
           <div class="ind-foot">
             <span class="ind-count">Proyectos disponibles →</span>
             <button class="ind-btn" id="btn-res" onclick="togglePanel('res')">Ver proyectos <svg viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg></button>
           </div>
         </div>
-        <div class="ind-panel" id="panel-res"><div class="ind-panel-inner" id="inner-res"><div class="proj-row proj-row-link" onclick="goToProjectCard('residencial','Quintas Residencial Campestre')" title="Ver proyecto en Proyectos"><div><div class="proj-name">Quintas Residencial Campestre</div><div class="proj-meta">Fraccionamientos Residenciales · Montemorelos / Bosques de la Silla, N.L.</div></div><span class="proj-status s-active">Activo</span><span class="proj-row-arrow">→</span></div><div class="proj-cta-note">Haz clic en el proyecto para ver más detalles.</div></div></div>
+        <div class="ind-panel" id="panel-res"><div class="ind-panel-inner" id="inner-res"><div class="proj-row proj-row-link" onclick="goToProjectCard('residencial','Quintas Residencial Campestre')" title="Ver proyecto en Proyectos"><div><div class="proj-name">Quintas Residencial Campestre</div><div class="proj-meta">Fraccionamientos Residencial Campestre · Montemorelos / Bosques de la Silla, N.L.</div></div><span class="proj-status s-active">Activo</span><span class="proj-row-arrow">→</span></div><div class="proj-cta-note">Haz clic en el proyecto para ver más detalles.</div></div></div>
       </div>
       <div class="ind-card sect-habitacional rev d4">
         <div class="ind-bg-num" style="color:var(--sector-habitacional)">04</div><div class="ind-hover-bar" style="background:linear-gradient(90deg,var(--sector-habitacional),var(--gold))"></div>
@@ -260,7 +260,7 @@
           <div class="f-field"><label>Correo</label><input id="fCorreo" type="email" placeholder="Opcional"></div>
           <div class="f-field"><label>Teléfono</label><input id="fTelefono" type="tel" placeholder="+52 81 3605 6513"></div>
           <div class="f-field"><label>Sector de Interés</label>
-            <select id="fSector"><option value="" disabled selected>Selecciona un sector</option><option>Fraccionamientos Campestres</option><option>Parques Industriales</option><option>Fraccionamientos Residenciales</option><option>Departamentos Habitacionales</option><option>Información General</option></select>
+            <select id="fSector"><option value="" disabled selected>Selecciona un sector</option><option>Fraccionamientos Campestres</option><option>Parques Industriales</option><option>Fraccionamientos Residencial Campestre</option><option>Departamentos Habitacionales</option><option>Información General</option></select>
           </div>
           <div class="f-field"><label>Mensaje</label><textarea id="fMensaje" placeholder="Cuéntanos sobre tu proyecto o inversión de interés…">Hola, me gustaría obtener más información sobre sus proyectos inmobiliarios. ¿Podrían ponerse en contacto conmigo? Gracias.</textarea></div>
           <button type="submit" class="form-submit">Enviar Solicitud</button>
@@ -291,7 +291,7 @@
       </svg>
       <p class="f-tagline">Más de 30 años transformando tierra en oportunidades reales de inversión patrimonial.</p>
     </div>
-    <div class="f-links"><h4>Sectores</h4><ul><li><a onclick="showPage('projects')">Fraccionamientos Campestres</a></li><li><a onclick="showPage('projects')">Parques Industriales</a></li><li><a onclick="showPage('projects')">Fraccionamientos Residenciales</a></li><li><a onclick="showPage('projects')">Departamentos Habitacionales</a></li></ul></div>
+    <div class="f-links"><h4>Sectores</h4><ul><li><a onclick="showPage('projects')">Fraccionamientos Campestres</a></li><li><a onclick="showPage('projects')">Parques Industriales</a></li><li><a onclick="showPage('projects')">Fraccionamientos Residencial Campestre</a></li><li><a onclick="showPage('projects')">Departamentos Habitacionales</a></li></ul></div>
     <div class="f-links"><h4>Empresa</h4><ul><li><a onclick="navToMain('#about')">Nuestra Historia</a></li><li><a onclick="showPage('projects')">Proyectos</a></li><li><a onclick="navToMain('#contact')">Contacto</a></li></ul></div>
     <div class="f-links"><h4>Ubicación</h4><ul><li><a>Río San Lorenzo 629 Ote</a></li><li><a>Fuentes del Valle</a></li><li><a>San Pedro Garza García, N.L.</a></li><li><a>Lun–Vie: 9am – 7pm</a></li></ul></div>
   </div>
@@ -315,7 +315,7 @@
       <button class="filter-tab active" onclick="filterProjs('all',this)">Todos</button>
       <button class="filter-tab sect-campestre" onclick="filterProjs('campestre',this)">Campestre</button>
       <button class="filter-tab sect-industrial" onclick="filterProjs('industrial',this)">Industrial</button>
-      <button class="filter-tab sect-residencial" onclick="filterProjs('residencial',this)">Residencial</button>
+      <button class="filter-tab sect-residencial" onclick="filterProjs('residencial',this)">Residencial Campestre</button>
       <button class="filter-tab sect-habitacional" onclick="filterProjs('habitacional',this)">Habitacional</button>
       <span class="filter-count" id="proj-count"></span>
     </div>
@@ -329,7 +329,7 @@
       <div class="psec-title" data-sector="industrial" onclick="filterProjs('industrial', document.querySelector('.filter-tab.sect-industrial'))">Parques Industriales <span>Logística · Manufactura · Estrategia</span></div>
       <div class="proj-cards" id="grid-industrial"><div class="pempty">Cargando proyectos…</div></div>
 
-      <div class="psec-title" data-sector="residencial" onclick="filterProjs('residencial', document.querySelector('.filter-tab.sect-residencial'))">Fraccionamientos Residenciales <span>Vivienda Premium · Amenidades · Comunidad</span></div>
+      <div class="psec-title" data-sector="residencial" onclick="filterProjs('residencial', document.querySelector('.filter-tab.sect-residencial'))">Fraccionamientos Residencial Campestre <span>Vivienda Premium · Amenidades · Comunidad</span></div>
       <div class="proj-cards" id="grid-residencial"><div class="pempty">Cargando proyectos…</div></div>
 
       <div class="psec-title" data-sector="habitacional" onclick="filterProjs('habitacional', document.querySelector('.filter-tab.sect-habitacional'))">Departamentos Habitacionales <span>Vertical · Urbano · Moderno</span></div>
@@ -358,7 +358,7 @@
         </svg>
         <p class="f-tagline">Más de 30 años transformando tierra en oportunidades reales.</p>
       </div>
-      <div class="f-links"><h4>Filtrar</h4><ul><li><a onclick="filterProjs('campestre',null)">Campestre</a></li><li><a onclick="filterProjs('industrial',null)">Industrial</a></li><li><a onclick="filterProjs('residencial',null)">Fraccionamientos Residenciales</a></li><li><a onclick="filterProjs('habitacional',null)">Habitacional</a></li></ul></div>
+      <div class="f-links"><h4>Filtrar</h4><ul><li><a onclick="filterProjs('campestre',null)">Campestre</a></li><li><a onclick="filterProjs('industrial',null)">Industrial</a></li><li><a onclick="filterProjs('residencial',null)">Fraccionamientos Residencial Campestre</a></li><li><a onclick="filterProjs('habitacional',null)">Habitacional</a></li></ul></div>
       <div class="f-links"><h4>Navegar</h4><ul><li><a onclick="showPage('main')">Inicio</a></li><li><a onclick="navToMain('#about')">Nosotros</a></li><li><a onclick="navToMain('#contact')">Contacto</a></li></ul></div>
       <div class="f-links"><h4>Ubicación</h4><ul><li><a>Río San Lorenzo 629 Ote</a></li><li><a>San Pedro Garza García, N.L.</a></li><li><a>Lun–Vie: 9am – 7pm</a></li></ul></div>
     </div>
