@@ -31,6 +31,12 @@
   <div class="glb-counter" id="glb-counter"></div>
 </div>
 
+<!-- VIDEO OVERLAY -->
+<div class="vid-overlay" id="vid-overlay" onclick="if(event.target===this)closeVideo()">
+  <button class="vid-close" onclick="closeVideo()">&#215;</button>
+  <video class="vid-player" id="vid-player" controls playsinline preload="metadata"></video>
+</div>
+
 <div id="cur"></div>
 <div id="cur-ring"></div>
 <div id="sprog"></div>

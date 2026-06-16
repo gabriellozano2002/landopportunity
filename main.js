@@ -3,6 +3,7 @@
    descripción, etc.). Las fotos NO van en el JSON: se descubren solas leyendo
    los archivos de la carpeta img/<id>/ (1.jpg, 2.jpg, 3.jpg ...).
    - Agregar/quitar fotos  -> sube o borra archivos en img/<id>/ (numerados sin saltos).
+   - Video (opcional)       -> sube img/<id>/video.mp4 ; aparece un botón "▶ Video".
    - Agregar un proyecto    -> crea su carpeta img/<id>/ y añade su bloque en projects.json.
    Ver README.md para más detalle.                                            */
 
@@ -34,7 +35,19 @@ async function _discoverPhotos(id) {
   return fotos;
 }
 
-function _buildCard(p, fotos) {
+/* Comprueba si existe img/<id>/video.mp4 (devuelve la ruta o null). */
+function _discoverVideo(id) {
+  return new Promise(function (resolve) {
+    var src = 'img/' + id + '/video.mp4';
+    var v = document.createElement('video');
+    v.preload = 'metadata';
+    v.onloadedmetadata = function () { resolve(src); };
+    v.onerror = function () { resolve(null); };
+    v.src = src;
+  });
+}
+
+function _buildCard(p, fotos, video) {
   fotos = fotos || p.fotos || [];
   const card = document.createElement('div');
   card.className = 'pcard sect-' + p.sector;
@@ -44,6 +57,7 @@ function _buildCard(p, fotos) {
   if (fotos && fotos.length > 0) {
     const slides = fotos.map(f => `<div class="gallery-slide" style="background-image:url('${f}')"></div>`).join('');
     const dots   = fotos.map((_,i) => `<div class="gdot${i===0?' active':''}" onclick="setSlide(this.closest('.pcard'),${i})"></div>`).join('');
+    const videoBtn = video ? `<button class="gallery-videobtn" onclick="event.stopPropagation();openVideo('${video}')">&#9654; Video</button>` : '';
     galleryHtml = `
   <div class="pcard-gallery">
     <div class="gallery-slides" data-cur="0">${slides}</div>
@@ -51,6 +65,7 @@ function _buildCard(p, fotos) {
     <button class="gallery-next" onclick="slideGallery(this.closest('.pcard'),1)">&#8250;</button>
     <div class="gallery-dots">${dots}</div>
     <span class="gallery-counter"><span class="gcur">1</span>/${fotos.length}</span>
+    ${videoBtn}
   </div>`;
   }
 
@@ -78,9 +93,10 @@ async function _loadProjects() {
     console.error('No se pudo cargar projects.json:', err);
   }
 
-  /* Descubre las fotos de cada proyecto (o usa p.fotos si viene definido). */
+  /* Descubre fotos y video de cada proyecto (o usa p.fotos / p.video del JSON). */
   await Promise.all(projects.map(async function (p) {
     p._fotos = (Array.isArray(p.fotos) && p.fotos.length) ? p.fotos : await _discoverPhotos(p.id);
+    p._video = p.video || await _discoverVideo(p.id);
   }));
 
   ['campestre','industrial','residencial','habitacional'].forEach(function(sector){
@@ -90,7 +106,7 @@ async function _loadProjects() {
     if(empty) empty.remove();
     var sectorProjects = projects.filter(function(p){ return p.sector === sector; });
     sectorProjects.forEach(function(p){
-      var card = _buildCard(p, p._fotos);
+      var card = _buildCard(p, p._fotos, p._video);
       grid.appendChild(card);
       addTilt(card);
       hoverEl(card);
@@ -105,6 +121,32 @@ async function _loadProjects() {
   if(typeof _initGalleries === 'function') _initGalleries();
   updateCount();
 }
+
+/* ===== VIDEO MODAL ===== */
+function openVideo(src) {
+  var ov = document.getElementById('vid-overlay');
+  var pl = document.getElementById('vid-player');
+  if (!ov || !pl) return;
+  pl.src = src;
+  ov.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  var pr = pl.play();
+  if (pr && pr.catch) pr.catch(function(){}); /* ignora si el navegador bloquea el autoplay */
+}
+function closeVideo() {
+  var ov = document.getElementById('vid-overlay');
+  var pl = document.getElementById('vid-player');
+  if (!ov || !pl) return;
+  pl.pause();
+  pl.removeAttribute('src');
+  pl.load();
+  ov.classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function (e) {
+  var ov = document.getElementById('vid-overlay');
+  if (ov && ov.classList.contains('open') && e.key === 'Escape') closeVideo();
+});
 
 /* CURSOR */
 const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
@@ -265,7 +307,7 @@ function setSlide(card, idx) {
 const _galTimers = new Map();
 function _startAutoplay(card) {
   _stopAutoplay(card);
-  _galTimers.set(card, setInterval(() => _galApply(card, _galCur(card) + 1), 5000));
+  _galTimers.set(card, setInterval(() => _galApply(card, _galCur(card) + 1), 3000));
 }
 function _stopAutoplay(card) {
   if (_galTimers.has(card)) { clearInterval(_galTimers.get(card)); _galTimers.delete(card); }

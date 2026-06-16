@@ -6,10 +6,11 @@ manejan en **dos lugares**:
 | Quiero... | ¿Dónde? |
 |---|---|
 | Cambiar/agregar/quitar **fotos** de un proyecto | Carpeta `img/<id-del-proyecto>/` |
+| Agregar/cambiar el **video** de un proyecto | Archivo `img/<id-del-proyecto>/video.mp4` |
 | Cambiar **nombre, descripción, ubicación, sector, estatus** o **agregar un proyecto nuevo** | Archivo `projects.json` |
 
-> **Importante:** las fotos ya **NO** van dentro de `projects.json` ni de `main.js`.
-> Solo se suben como archivos a la carpeta `img/`. El sitio las detecta solo.
+> **Importante:** las fotos y videos ya **NO** van dentro de `projects.json` ni de
+> `main.js`. Solo se suben como archivos a la carpeta `img/`. El sitio los detecta solo.
 
 ---
 
@@ -19,10 +20,11 @@ Cada proyecto tiene su carpeta dentro de `img/`. El `id` es el de `projects.json
 
 ```
 img/
-  san-mateo-elite/                 1.jpg  2.jpg
+  san-mateo-elite/                 1.jpg ... 9.jpg   video.mp4
   imperium/                        1.png  2.jpg
-  quintas-residencial-campestre/   1.jpg  2.jpg ... 7.jpg
-  san-lorenzo/                     1.jpg  2.jpg ... 6.jpg
+  quintas-residencial-campestre/   1.jpg ... 25.jpg  video.mp4
+  san-lorenzo/                     1.jpg ... 6.jpg
+  san-mateo-los-olivos/            1.jpg ... 6.jpg   video.mp4
 ```
 
 **Reglas de las fotos:**
@@ -40,8 +42,28 @@ img/
 
 No hay que tocar ningún código: con subir/borrar archivos basta.
 
-> Consejo: usa fotos de buen tamaño pero optimizadas (ideal ~1600 px de ancho y
-> menos de ~400 KB) para que la página cargue rápido.
+> **Importante — tamaño/peso:** sube las fotos ya **optimizadas** (ideal ~2000 px
+> de lado largo y menos de ~400 KB). Las fotos directas de cámara (8–16 MB) hacen
+> el sitio lentísimo y pesan demasiado para GitHub. Puedes optimizar una carpeta
+> con el comando de macOS:
+> ```bash
+> # baja todas las .jpg de una carpeta a máx. 2000 px y calidad 70
+> for f in img/MI-PROYECTO/*.jpg; do sips -Z 2000 -s formatOptions 70 "$f" --out "$f"; done
+> ```
+
+### Video del proyecto (opcional)
+
+- Sube **un solo** archivo llamado exactamente **`video.mp4`** dentro de la carpeta
+  del proyecto: `img/<id>/video.mp4`. Aparecerá un botón **"▶ Video"** sobre la
+  galería que abre el video en una ventana.
+- Debe ser **MP4 (H.264)** para que funcione en todos los navegadores, y **ligero**
+  (idealmente < 10 MB). Para comprimir un video pesado, en macOS:
+  ```bash
+  avconvert -s "VIDEO-ORIGINAL.mov" -p PresetMediumQuality -o "img/MI-PROYECTO/video.mp4" --replace
+  ```
+- Para **quitar** el video: borra `video.mp4`.
+- ¿Quieres video en alta calidad sin que pese en el repo? Súbelo a YouTube/Vimeo
+  y avísame para incrustarlo (es lo ideal para videos largos o en HD).
 
 ---
 
@@ -49,7 +71,8 @@ No hay que tocar ningún código: con subir/borrar archivos basta.
 
 **Paso 1 — Crea su carpeta de fotos.** En `img/` crea una carpeta con un `id`
 en minúsculas y con guiones (sin espacios ni acentos), por ejemplo
-`img/lomas-del-roble/`, y sube ahí `1.jpg`, `2.jpg`, ...
+`img/lomas-del-roble/`, y sube ahí `1.jpg`, `2.jpg`, ... (y opcionalmente
+`video.mp4`).
 
 **Paso 2 — Agrega su bloque en `projects.json`.** Copia este modelo dentro de la
 lista `"projects"` (separa cada proyecto con una coma):
@@ -80,11 +103,16 @@ lista `"projects"` (separa cada proyecto con una coma):
 
 - **`estatusClase` / `estatusLabel`** (la etiqueta de color del estatus):
 
-  | Estado | `estatusClase` | `estatusLabel` (ejemplo) |
-  |---|---|---|
-  | Activo | `s-active` | `Activo · Unidades Disponibles` |
-  | Preventa | `s-pre` | `Preventa` |
-  | Próximamente | `s-coming` | `Próximamente` |
+  | Estado | `estatusClase` | Color | `estatusLabel` (ejemplo) |
+  |---|---|---|---|
+  | Activo / disponible | `s-active` | dorado | `Activo · Lotes Disponibles` |
+  | Preventa | `s-pre` | dorado claro | `Preventa` |
+  | Queda poco / +50% vendido | `s-limited` | ámbar | `Últimos Lotes` (lotes) / `Últimas Unidades` (unidades) |
+  | Próximamente | `s-coming` | gris | `Próximamente` |
+  | Vendido / ocupado | `s-sold` | rojo | `No Disponibles · Ocupados` |
+
+  > El `estatusLabel` es texto libre (puedes escribir lo que quieras); el
+  > `estatusClase` define solo el **color** de la etiqueta.
 
 ---
 
@@ -99,7 +127,8 @@ lista `"projects"` (separa cada proyecto con una coma):
 
 - `index.html` carga `styles.css` y `main.js`.
 - `main.js` lee `projects.json` y, por cada proyecto, busca sus fotos en
-  `img/<id>/1.jpg`, `2.jpg`, ... hasta que un número no exista.
+  `img/<id>/1.jpg`, `2.jpg`, ... hasta que un número no exista, y busca
+  `img/<id>/video.mp4` para el botón de video.
 - Para **ver los cambios localmente** necesitas un servidor (el `fetch` de
   `projects.json` no funciona abriendo el archivo con doble clic). Opciones:
   - `python3 -m http.server` dentro de esta carpeta y abre `http://localhost:8000`, o

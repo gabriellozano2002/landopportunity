@@ -5,10 +5,10 @@
       "nombre": "San Mateo Elite",
       "sector": "campestre",
       "sectorLabel": "Fraccionamiento Campestre",
-      "estatus": "active",
-      "estatusClase": "s-active",
-      "estatusLabel": "Activo · Lotes Disponibles",
-      "descripcion": "Fraccionamiento campestre de lotes con todos los servicios — red de agua, electricidad y caseta de vigilancia. Amplios espacios rodeados de vegetación nativa, vialidades pavimentadas y vistas a la sierra. Ideal para quien busca tranquilidad e inversión con plusvalía natural.",
+      "estatus": "limited",
+      "estatusClase": "s-limited",
+      "estatusLabel": "Últimos Lotes",
+      "descripcion": "Fraccionamiento campestre de lotes con todos los servicios — red de agua, electricidad y caseta de vigilancia. Amplios espacios rodeados de vegetación nativa, vialidades pavimentadas y vistas a la sierra. Ubicado detrás de la Presa de la Boca, a tan solo 30 minutos. Ideal para quien busca tranquilidad e inversión con plusvalía natural.",
       "ubicacion": "Cadereyta Jiménez, N.L."
     },
     {
@@ -16,9 +16,9 @@
       "nombre": "IMPERIUM",
       "sector": "industrial",
       "sectorLabel": "Parque Industrial",
-      "estatus": "active",
-      "estatusClase": "s-active",
-      "estatusLabel": "En Desarrollo",
+      "estatus": "limited",
+      "estatusClase": "s-limited",
+      "estatusLabel": "Últimos Lotes",
       "descripcion": "Desarrollo industrial de alto estándar con infraestructura de primer nivel, vialidades pavimentadas y servicios completos. Diseñado para manufactura, logística y operaciones industriales de gran escala.",
       "ubicacion": "Fidel Velázquez, Gral. Escobedo, N.L."
     },
@@ -27,9 +27,9 @@
       "nombre": "Quintas Residencial Campestre",
       "sector": "residencial",
       "sectorLabel": "Fraccionamientos Residencial Campestre",
-      "estatus": "active",
-      "estatusClase": "s-active",
-      "estatusLabel": "Activo · Unidades Disponibles",
+      "estatus": "limited",
+      "estatusClase": "s-limited",
+      "estatusLabel": "Últimas Unidades",
       "descripcion": "Quintas independientes del Fraccionamientos Residencial Campestre, completamente terminadas y ubicadas en entornos naturales privilegiados. Diseño arquitectónico contemporáneo, acabados de lujo, piscina privada y amplios jardines. Unidades disponibles para entrega inmediata.",
       "ubicacion": "Montemorelos / Bosques de la Silla, N.L."
     },
@@ -38,11 +38,11 @@
       "nombre": "San Lorenzo",
       "sector": "habitacional",
       "sectorLabel": "Departamentos Habitacionales",
-      "estatus": "active",
-      "estatusClase": "s-active",
-      "estatusLabel": "Activo &middot; Unidades Disponibles",
+      "estatus": "sold",
+      "estatusClase": "s-sold",
+      "estatusLabel": "No Disponibles &middot; Ocupados",
       "descripcion": "Departamentos de lujo en renta en uno de los municipios m&#225;s exclusivos de M&#233;xico. Ubicaci&#243;n c&#233;ntrica privilegiada en San Pedro Garza Garc&#237;a, con acabados premium, dise&#241;o contempor&#225;neo y amenidades de alto nivel. Vive con estilo donde todo est&#225; a tu alcance.",
-      "ubicacion": "&#128205; R&#237;o San Lorenzo 629 Ote, Fuentes del Valle, 66224 San Pedro Garza Garc&#237;a, N.L."
+      "ubicacion": "San Pedro Garza Garc&#237;a, Nuevo Le&#243;n"
     },
     {
       "id": "san-mateo-los-olivos",
@@ -52,8 +52,19 @@
       "estatus": "coming",
       "estatusClase": "s-coming",
       "estatusLabel": "Próximamente",
-      "descripcion": "Próximamente. Nuevo desarrollo campestre San Mateo Los Olivos. Más información muy pronto.",
-      "ubicacion": "Por definir, N.L."
+      "descripcion": "Próximamente. Nuevo desarrollo campestre San Mateo Los Olivos, ubicado detrás de la Presa de la Boca, a tan solo 35 minutos y a 5 minutos de San Mateo Elite. Más información muy pronto.",
+      "ubicacion": "Cadereyta Jiménez, N.L."
+    },
+    {
+      "id": "santa-catarina",
+      "nombre": "Santa Catarina",
+      "sector": "habitacional",
+      "sectorLabel": "Departamentos Habitacionales",
+      "estatus": "coming",
+      "estatusClase": "s-coming",
+      "estatusLabel": "Próximamente",
+      "descripcion": "Próximamente. Nuevo desarrollo habitacional en Santa Catarina. Más información muy pronto.",
+      "ubicacion": "Santa Catarina, N.L."
     }
   ]
 }
