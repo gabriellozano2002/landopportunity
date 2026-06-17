@@ -3,6 +3,7 @@
     {
       "id": "san-mateo-elite",
       "nombre": "San Mateo Elite",
+      "operacion": "venta",
       "sector": "campestre",
       "sectorLabel": "Fraccionamiento Campestre",
       "estatus": "limited",
@@ -14,6 +15,7 @@
     {
       "id": "imperium",
       "nombre": "IMPERIUM",
+      "operacion": "venta",
       "sector": "industrial",
       "sectorLabel": "Parque Industrial",
       "estatus": "limited",
@@ -25,6 +27,7 @@
     {
       "id": "quintas-residencial-campestre",
       "nombre": "Quintas Residencial Campestre",
+      "operacion": "venta",
       "sector": "residencial",
       "sectorLabel": "Fraccionamientos Residencial Campestre",
       "estatus": "limited",
@@ -36,6 +39,7 @@
     {
       "id": "san-lorenzo",
       "nombre": "San Lorenzo",
+      "operacion": "renta",
       "sector": "habitacional",
       "sectorLabel": "Departamentos Habitacionales",
       "estatus": "sold",
@@ -47,6 +51,7 @@
     {
       "id": "san-mateo-los-olivos",
       "nombre": "San Mateo Los Olivos",
+      "operacion": "venta",
       "sector": "campestre",
       "sectorLabel": "Fraccionamiento Campestre",
       "estatus": "coming",
@@ -58,6 +63,7 @@
     {
       "id": "santa-catarina",
       "nombre": "Santa Catarina",
+      "operacion": "renta",
       "sector": "habitacional",
       "sectorLabel": "Departamentos Habitacionales",
       "estatus": "coming",

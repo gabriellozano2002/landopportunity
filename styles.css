@@ -406,6 +406,11 @@ body.on-projects header{background:rgba(26,26,26,.97)!important;border-bottom-co
 .pcard-thumb::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(44,36,22,.3))}
 .pcard-body{padding:1.8rem;position:relative;z-index:1}
 .pcard-sector{font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold-dark);margin-bottom:.6rem;font-family:var(--mono)}
+.pcard-toprow{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-bottom:.6rem}
+.pcard-toprow .pcard-sector{margin-bottom:0}
+.pcard-oper{flex:none;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;font-family:var(--mono);padding:.28rem .7rem;border-radius:20px;white-space:nowrap}
+.oper-venta{background:rgba(61,107,79,.14);color:#2F6B48;border:1px solid rgba(61,107,79,.28)}
+.oper-renta{background:rgba(27,75,122,.14);color:#1B4B7A;border:1px solid rgba(27,75,122,.3)}
 .pcard-name{font-family:var(--serif);font-size:1.4rem;font-weight:300;color:var(--earth);margin-bottom:.4rem;line-height:1.2}
 .pcard-loc{font-size:.74rem;color:var(--earth-light);margin-bottom:.9rem;font-family:var(--mono)}
 .pcard-desc{font-size:.8rem;color:var(--earth-mid);line-height:1.75}

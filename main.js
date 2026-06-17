@@ -69,9 +69,15 @@ function _buildCard(p, fotos, video) {
   </div>`;
   }
 
+  const oper = (p.operacion || 'venta').toLowerCase();
+  const operLabel = oper === 'renta' ? 'En Renta' : 'En Venta';
+
   card.innerHTML = galleryHtml + `
   <div class="pcard-body">
-    <div class="pcard-sector">${p.sectorLabel || p.sector}</div>
+    <div class="pcard-toprow">
+      <div class="pcard-sector">${p.sectorLabel || p.sector}</div>
+      <span class="pcard-oper oper-${oper}">${operLabel}</span>
+    </div>
     <div class="pcard-name">${p.nombre}</div>
     <div class="pcard-loc">&#x1F4CD; ${p.ubicacion}</div>
     <div class="pcard-desc">${p.descripcion}</div>
