@@ -71,6 +71,18 @@
       "estatusLabel": "Próximamente",
       "descripcion": "Próximamente. Nuevo desarrollo habitacional en Santa Catarina. Más información muy pronto.",
       "ubicacion": "Santa Catarina, N.L."
+    },
+    {
+      "id": "clinica-17",
+      "nombre": "Cl&#237;nica 17",
+      "operacion": "renta",
+      "sector": "habitacional",
+      "sectorLabel": "Departamentos Habitacionales",
+      "estatus": "sold",
+      "estatusClase": "s-sold",
+      "estatusLabel": "No Disponibles &middot; Ocupados",
+      "descripcion": "Departamentos en renta, proyecto totalmente terminado y actualmente ocupado en su totalidad. Estamos actualizando la p&#225;gina: las im&#225;genes de este desarrollo estar&#225;n disponibles muy pronto.",
+      "ubicacion": "Centro de Monterrey, N.L."
     }
   ]
 }

@@ -67,6 +67,14 @@ function _buildCard(p, fotos, video) {
     <span class="gallery-counter"><span class="gcur">1</span>/${fotos.length}</span>
     ${videoBtn}
   </div>`;
+  } else {
+    /* Sin fotos todavía: placeholder de "imágenes en actualización". */
+    galleryHtml = `
+  <div class="pcard-gallery pcard-noimg">
+    <svg class="pcard-noimg-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2"/><circle cx="12" cy="12.5" r="3.2"/><path d="M8 6l1.3-2.2h5.4L16 6"/></svg>
+    <span class="pcard-noimg-t">Im&#225;genes pr&#243;ximamente</span>
+    <span class="pcard-noimg-s">P&#225;gina en actualizaci&#243;n</span>
+  </div>`;
   }
 
   const oper = (p.operacion || 'venta').toLowerCase();

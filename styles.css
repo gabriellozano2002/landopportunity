@@ -392,6 +392,10 @@ body.on-projects header{background:rgba(26,26,26,.97)!important;border-bottom-co
 .pcard::before{content:'';position:absolute;inset:-1px;background:linear-gradient(135deg,rgba(212,168,67,.1),rgba(232,201,122,.05),transparent 55%);opacity:0;border-radius:inherit;transition:opacity .4s;pointer-events:none;z-index:0}
 .pcard:hover::before{opacity:1}
 .pcard-gallery{position:relative;height:220px;overflow:hidden;background:var(--sand)}
+.pcard-noimg{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.45rem;text-align:center;padding:1rem;border-bottom:1px solid rgba(212,168,67,.15)}
+.pcard-noimg-ic{width:34px;height:34px;color:var(--gold-dark);opacity:.6}
+.pcard-noimg-t{font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dark)}
+.pcard-noimg-s{font-family:var(--sans);font-size:.68rem;letter-spacing:.04em;color:var(--earth-light)}
 .gallery-slides{display:flex;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1)}
 .gallery-slide{min-width:100%;height:100%;background-size:cover;background-position:center;flex-shrink:0;cursor:pointer}
 .gallery-slide::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(44,36,22,.4))}
