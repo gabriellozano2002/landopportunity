@@ -37,16 +37,28 @@
       "ubicacion": "Montemorelos / Bosques de la Silla, N.L."
     },
     {
-      "id": "san-lorenzo",
-      "nombre": "San Lorenzo",
-      "operacion": "renta",
+      "id": "teran-elite",
+      "nombre": "Ter&#225;n Elite",
+      "operacion": "venta",
+      "sector": "residencial",
+      "sectorLabel": "Fraccionamientos Residencial Campestre",
+      "estatus": "active",
+      "estatusClase": "s-active",
+      "estatusLabel": "Activo &middot; Lotes Disponibles",
+      "descripcion": "Lotes residenciales rodeados de naturaleza, donde el verde es el protagonista. Un entorno de vegetaci&#243;n abundante, amplitud y tranquilidad, pensado para construir tu residencia en equilibrio con el paisaje. Espacios generosos, &#225;reas verdes y una conexi&#243;n genuina con el entorno natural.",
+      "ubicacion": "Nuevo Le&#243;n"
+    },
+    {
+      "id": "el-encuentro",
+      "nombre": "El Encuentro",
+      "operacion": "venta",
       "sector": "habitacional",
       "sectorLabel": "Departamentos Habitacionales",
-      "estatus": "sold",
-      "estatusClase": "s-sold",
-      "estatusLabel": "No Disponibles &middot; Ocupados",
-      "descripcion": "Departamentos de lujo en renta en uno de los municipios m&#225;s exclusivos de M&#233;xico. Ubicaci&#243;n c&#233;ntrica privilegiada en San Pedro Garza Garc&#237;a, con acabados premium, dise&#241;o contempor&#225;neo y amenidades de alto nivel. Vive con estilo donde todo est&#225; a tu alcance.",
-      "ubicacion": "San Pedro Garza Garc&#237;a, Nuevo Le&#243;n"
+      "estatus": "active",
+      "estatusClase": "s-active",
+      "estatusLabel": "Activo &middot; 20 Unidades en Venta",
+      "descripcion": "Desarrollo habitacional de departamentos en Playa del Carmen, con solamente 20 unidades en venta. Un proyecto de escala limitada pensado para vivienda, en uno de los destinos m&#225;s buscados del Caribe mexicano.",
+      "ubicacion": "Playa del Carmen, Quintana Roo"
     },
     {
       "id": "san-mateo-los-olivos",
@@ -66,11 +78,35 @@
       "operacion": "renta",
       "sector": "habitacional",
       "sectorLabel": "Departamentos Habitacionales",
-      "estatus": "coming",
-      "estatusClase": "s-coming",
-      "estatusLabel": "Próximamente",
-      "descripcion": "Próximamente. Nuevo desarrollo habitacional en Santa Catarina. Más información muy pronto.",
+      "estatus": "active",
+      "estatusClase": "s-active",
+      "estatusLabel": "Activo &middot; Disponibles",
+      "descripcion": "Nuevo desarrollo habitacional en Santa Catarina, ya disponible. Conoce el proyecto en la galer&#237;a y solicita informaci&#243;n.",
       "ubicacion": "Santa Catarina, N.L."
+    },
+    {
+      "id": "azahares",
+      "nombre": "Azahares",
+      "operacion": "venta",
+      "sector": "habitacional",
+      "sectorLabel": "Desarrollo Habitacional",
+      "estatus": "active",
+      "estatusClase": "s-active",
+      "estatusLabel": "Activo &middot; Casas y Lotes Disponibles",
+      "descripcion": "Desarrollo habitacional de casas y lotes de inter&#233;s social, planeado para el crecimiento familiar. Una oportunidad accesible para construir patrimonio en una comunidad bien trazada, con planeaci&#243;n urbana ordenada y espacios pensados para vivir.",
+      "ubicacion": "Nuevo Le&#243;n"
+    },
+    {
+      "id": "san-lorenzo",
+      "nombre": "San Lorenzo",
+      "operacion": "renta",
+      "sector": "habitacional",
+      "sectorLabel": "Departamentos Habitacionales",
+      "estatus": "sold",
+      "estatusClase": "s-sold",
+      "estatusLabel": "No Disponibles &middot; Ocupados",
+      "descripcion": "Departamentos de lujo en renta en uno de los municipios m&#225;s exclusivos de M&#233;xico. Ubicaci&#243;n c&#233;ntrica privilegiada en San Pedro Garza Garc&#237;a, con acabados premium, dise&#241;o contempor&#225;neo y amenidades de alto nivel. Vive con estilo donde todo est&#225; a tu alcance.",
+      "ubicacion": "San Pedro Garza Garc&#237;a, Nuevo Le&#243;n"
     },
     {
       "id": "clinica-17",
